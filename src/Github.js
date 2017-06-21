@@ -14,12 +14,12 @@ class Github extends Component {
   }
 
   handleSubmit = (ev) => {
+    console.log('help')
     ev.preventDefault()
     this.props.history.push(`/github/${this.state.username}`)
   }
 
   render() {
-    console.log("Pls log")
     return (
       <div className="github">
         <img src="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt="github logo" className="github-logo"/>

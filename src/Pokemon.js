@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import PokemonData from './PokemonData'
+import PokemonData from './PokemonData.js'
 
 class Pokemon extends Component {
   state = {
@@ -9,8 +9,8 @@ class Pokemon extends Component {
 
   //sets the current state.name to what has been entered
   handleChange = (ev) => {
-    const toBeEntered = ev.currentTarget.value
-    this.setState({ pName: toBeEntered  })
+    const pName = ev.currentTarget.value
+    this.setState({ pName  })
   }
 
   //handles the user entering a pokemon's name
@@ -33,7 +33,7 @@ class Pokemon extends Component {
           </div>
         </form>
         <Route exact path='/pokemon' render={() => <h3>Enter a Pokemon name</h3> } />
-        <Route path='/github/:pName' component={PokemonData} />
+        <Route path='/:username' component={PokemonData} />
       </div>
     )
   }

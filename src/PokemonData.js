@@ -15,7 +15,7 @@ class PokemonData extends Component {
   }
 
   fetchPokeData = () => {
-    fetch(`api/v2/pokemon/{id or name}${this.props.match.params.pName}`)
+    fetch(`api/v2/pokemon/{id or name}${this.props.match.params.username}`)
     .then(response => response.json())
     .then(pokemon => this.setState({ pokemon })) //TODO check
   }
@@ -23,8 +23,8 @@ class PokemonData extends Component {
 
   render() {
     const { pokemon } = this.state
+    {console.log(pokemon)}
     return (
-
       <div className="pokemon-data">
         <h2>Name: {pokemon.name}</h2>
         <h3>Height: {pokemon.height}</h3>
